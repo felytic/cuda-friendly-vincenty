@@ -12,7 +12,7 @@ setup(
     author='Serhii Hulko',
     author_email='felytic@gmail.com',
     url='https://github.com/felytic/cuda-friendly-vincenty',
-    packages=['cuda-friendly-vincenty'],
+    packages=['cuda_friendly_vincenty'],
     license='Unlicense',
     classifiers=[
         'Development Status :: 4 - Beta',
