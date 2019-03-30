@@ -12,18 +12,22 @@ This formula is widely used in geographic information systems (GIS) and is much
 more accurate than methods for computing the great-circle distance (which assume
 a spherical Earth).
 
+CUDA-friendly
+=============
+This repo is modification of [vincenty](https://github.com/maurycyp/vincenty)
+package. Since CUDA has some limitations (it doesn't understand try...except,
+for example) original code can't run on GPU.
+
 Example: distance between Boston and New York City
 --------------------------------------------------
 
 .. code:: python
 
-   >>> from vincenty import vincenty
-   >>> boston = (42.3541165, -71.0693514)
-   >>> newyork = (40.7791472, -73.9680804)
-   >>> vincenty(boston, newyork)
-   298.396057
-   >>> vincenty(boston, newyork, miles=True)
-   185.414657
+   >>> from cuda_friendly_vincenty import vincenty
+   >>> boston = (-71.0693514, 42.3541165)
+   >>> newyork = (-73.9680804, 40.7791472)
+   >>> vincenty(*boston, *newyork)
+   298396.06
 
 
 Installation
@@ -31,7 +35,7 @@ Installation
 
 .. code:: bash
 
-   $ pip install vincenty
+   $ pip install cuda_friendly_vincenty
 
 
 References
