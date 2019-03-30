@@ -35,7 +35,7 @@ Installation
 
 .. code:: bash
 
-   $ pip install cuda_friendly_vincenty
+   $ pip install cuda-friendly-vincenty
 
 
 References
