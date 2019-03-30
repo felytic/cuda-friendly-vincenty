@@ -14,7 +14,7 @@ a spherical Earth).
 
 CUDA-friendly
 =============
-This repo is modification of [vincenty](https://github.com/maurycyp/vincenty)
+This repo is modification of `vincenty <https://github.com/maurycyp/vincenty>`_
 package. Since CUDA has some limitations (it doesn't understand try...except,
 for example) original code can't run on GPU.
 
