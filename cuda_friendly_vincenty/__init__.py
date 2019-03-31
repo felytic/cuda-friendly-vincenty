@@ -18,17 +18,17 @@ def vincenty_inverse(lng0, lat0, lng1, lat1):
     >>> vincenty(0.0, 0.0, 0.0, 0.0)  # coincident points
     0.0
     >>> vincenty(0.0, 0.0, 1.0, 0.0)
-    111319.49
+    111319.49079322325
     >>> vincenty(0.0, 0.0, 0.0, 1.0)
-    110574.39
+    110574.38855795695
     >>> vincenty(0.0, 0.0, 179.5, 0.5)  # slow convergence
-    19936288.58
+    19936288.57898086
     >>> vincenty(0.0, 0.0, 179.7, 0.5)  # failure to converge
     -1
     >>> boston = (-71.0693514, 42.3541165)
     >>> newyork = (-73.9680804, 40.7791472)
     >>> vincenty(*boston, *newyork)
-    298396.06
+    298396.0574732601
     """
 
     # short-circuit coincident points
@@ -81,9 +81,7 @@ def vincenty_inverse(lng0, lat0, lng1, lat1):
         (cosSigma * (-1 + 2 * cos2SigmaM ** 2) - B / 6 * cos2SigmaM *
          (-3 + 4 * sinSigma ** 2) * (-3 + 4 * cos2SigmaM ** 2)))
 
-    s = b * A * (sigma - deltaSigma)
-
-    return round(s, 2)
+    return b * A * (sigma - deltaSigma)
 
 
 vincenty = vincenty_inverse
